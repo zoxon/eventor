@@ -1,0 +1,22 @@
+{
+  "name": "@zoxon/eventor",
+  "version": "1.0.0",
+  "description": "An event handling utility that provides a simple API for creating custom events and registering listeners",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "event",
+    "utility",
+    "custom-events",
+    "typescript"
+  ],
+  "author": "Konstantin Velichko",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}
