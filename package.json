@@ -5,7 +5,9 @@
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "vitest --environment jsdom",
+    "test:cover": "vitest run --coverage --environment jsdom"
   },
   "keywords": [
     "event",
@@ -15,8 +17,9 @@
   ],
   "author": "Konstantin Velichko",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "typescript": "^5.0.2"
+    "jsdom": "^21.1.1",
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.7"
   }
 }
