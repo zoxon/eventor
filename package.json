@@ -2,10 +2,13 @@
   "name": "@zoxon/eventor",
   "version": "1.0.0",
   "description": "An event handling utility that provides a simple API for creating custom events and registering listeners",
-  "main": "lib/index.js",
-  "types": "types/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "release": "pnpm run build && changeset publish",
+    "lint": "tsc",
     "test": "vitest --environment jsdom",
     "test:ci": "vitest run --environment jsdom --coverage"
   },
@@ -18,7 +21,9 @@
   "author": "Konstantin Velichko",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@vitest/coverage-c8": "^0.29.7",
+    "tsup": "^6.7.0",
     "typescript": "^5.0.2",
     "vitest": "^0.29.7"
   }

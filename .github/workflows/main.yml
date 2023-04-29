@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          version: 7
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install --frozen-lockfile
+
+      - name: Run tests and check types
+        run: npm run lint && npm run test
+
+      - name: Build
+        run: pnpm run build
