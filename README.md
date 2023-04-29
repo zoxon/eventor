@@ -47,6 +47,7 @@ const unlisten = listenEvent('modal:show', handleModalShow);
 // Later, to remove the event listener:
 unlisten();
 ```
+
 ### Removing an Event Listener
 
 To remove an event listener for a custom event, use the `unlistenEvent` function. It takes the same two parameters as `listenEvent`: the name of the event and the callback function.
